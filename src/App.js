@@ -15,13 +15,6 @@ function App() {
           <AppMenu></AppMenu>
           <AppContent></AppContent>
       </Space>
-   
-      <Routes>
-        <Route path="/phongban" element={<Phongban />}></Route>
-        <Route path="/toanbonhanvien" element={<Toanbonhanvien />}></Route>
-      </Routes>
-
-
     </div>
   );
 }
