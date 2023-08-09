@@ -1,5 +1,6 @@
 import { Col, Input, Row, Table, Select, Space, Button } from 'antd';
 import React, { useState } from 'react';
+import { PlusOutlined,UserOutlined } from "@ant-design/icons";
 const data = [
     {
       char: '',
@@ -139,7 +140,7 @@ function Toanbonhanvien() {
       ]
     return (
         <div>
-            <Row style={{
+            <Row justify="space-around" style={{
                 marginBottom : 25,
                 marginTop: 25,
             }}>
@@ -166,17 +167,29 @@ function Toanbonhanvien() {
                         <Button style ={{color:"green"}}>Làm mới</Button>
                     </Space>
                 </Col>
-                <Col span={8}>
-                    <Button style={{backgroundColor:"#1E90FF"}}>Thêm nhân viên</Button>
-                </Col>
+                <Col
+          span={4}
+          style={{
+            backgroundColor: "#0080ff",
+            color: "white",
+            fontSize: 14,
+            fontWeight: "bold",
+            borderRadius: 3,
+            padding: 10,
+            textAlign: "center",
+            float: 'right'
+          }}
+        >
+          <PlusOutlined style={{ fontWeight: "bold" }} /> Thêm nhân viên
+        </Col>
             </Row>
 
             <Table columns={columns} 
       dataSource={data} 
       onChange={handleChange} 
-      style={{
-        width: '100vw'
-      }}/>
+      style={{ minWidth: "100%" }}
+      scroll={{ x: "max-content" }}
+      />
         </div>
     );
 }

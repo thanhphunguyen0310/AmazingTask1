@@ -3,16 +3,16 @@
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-} */
-/* .AppHeader{
+    
+}
+.AppHeader{
     height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 4px 20px 4px 12px;
     border-bottom: 1px solid whitesmoke;
-
-} */
+} 
 /* .SideMenuAndPageContent{
     display: flex;
     flex: 1;
@@ -20,7 +20,7 @@
     align-items: flex-start;
     background-color: rgba(0, 0, 0, 0.05) ;
 } */
-.AppMenu{
+/* .AppMenu{
     height: 100%;
 }
 .SideMenuVertical{
@@ -29,4 +29,12 @@
 .AppContent{
     padding-left: 12px;
     margin-left: 12px;
-}
+} */
+.AppHeader{
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 20px 4px 12px;
+    border-bottom: 1px solid whitesmoke;
+} 

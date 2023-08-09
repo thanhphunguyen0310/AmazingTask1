@@ -7,9 +7,9 @@ import {
   UserAddOutlined,
   ClockCircleOutlined,
 } from "@ant-design/icons";
-import { Layout, Menu } from "antd";
+import { Layout, Menu, Typography } from "antd";
 import { useNavigate } from "react-router-dom";
-import Sider from "antd/es/layout/Sider";
+import Title from "antd/es/skeleton/Title";
 const rootSubmenuKeys = ["sub1", "sub2", "sub4"];
 function AppMenu() {
   const navigate = useNavigate();
@@ -25,18 +25,6 @@ function AppMenu() {
   return (
     <div className="AppMenu">
       <Layout>
-        {/* <Sider breakpoint="lg"
-        collapsedWidth="0"
-        onBreakpoint={(broken) => {
-          console.log(broken);
-        }}
-        onCollapse={(collapsed, type) => {
-          console.log(collapsed, type);
-        }}>
-             <div className="demo-logo-vertical" />
-             
-        </Sider>
-         */}
          <Menu style={{
           overflow: 'auto',
           height: '100vh',
@@ -166,7 +154,8 @@ function AppMenu() {
               ],
             },
           ]}
-        />
+          
+        />  
       </Layout>
     </div>
   );
