@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   UsergroupDeleteOutlined,
   MailOutlined,
@@ -6,6 +6,7 @@ import {
   HomeOutlined,
   UserAddOutlined,
   ClockCircleOutlined,
+  UserOutlined
 } from "@ant-design/icons";
 import { Layout, Menu, Typography } from "antd";
 import { useNavigate } from "react-router-dom";
@@ -22,6 +23,14 @@ function AppMenu() {
       setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
     }
   };
+  const [menuKey, setMenuKey] = useState("/")
+  useEffect(() => {
+    if(localStorage.getItem("menustatus")){
+      console.log(localStorage.getItem("menustatus"))
+      setMenuKey(localStorage.getItem("menustatus"))
+    }
+  })
+
   return (
     <div className="AppMenu">
       <Layout>
@@ -29,15 +38,27 @@ function AppMenu() {
           overflow: 'auto',
           height: '100vh',
         }}
+        defaultOpenKeys={["nhanvien", "tangca", "nghiphep", "donkhac", "quanliluong", "hopdong", "tuyendung"]}
           className="SideMenuVertical"
           onClick={(items) => {
+            localStorage.setItem("menustatus", items.key);
             navigate(items.key);
           }}
+          selectedKeys={[menuKey]}
           mode="inline"
           items={[
+            { label:(
+              <div style={{display: "flex", alignItems: "center"}}>
+                <img style={{width:30, height:30, marginRight:10}} src="logo192.png"></img>
+                <h4>Nguyễn Văn Quản Lí</h4>
+              </div>
+
+            )},
             { label: "Dashboard", key: "dashboard", icon: <HomeOutlined /> },
             {
-              label: "NHÂN VIÊN",
+              label: (
+                <span style={{fontWeight:500}}>NHÂN VIÊN</span>
+              ),
               key: "nhanvien",
               children: [
                 {
@@ -63,7 +84,7 @@ function AppMenu() {
               ],
             },
             {
-              label: "TĂNG CA",
+              label: (<span style={{fontWeight:500}}>TĂNG CA</span>),
               key: "tangca",
               children: [
                 {
@@ -79,7 +100,7 @@ function AppMenu() {
               ],
             },
             {
-              label: "NGHỈ PHÉP",
+              label: (<span style={{fontWeight:500}}>NGHỈ PHÉP</span>),
               key: "nghiphep",
               children: [
                 {
@@ -95,7 +116,7 @@ function AppMenu() {
               ],
             },
             {
-              label: "ĐƠN KHÁC",
+              label: (<span style={{fontWeight:500}}>ĐƠN KHÁC</span>),
               key: "donkhac",
               children: [
                 {
@@ -111,7 +132,7 @@ function AppMenu() {
               ],
             },
             {
-              label: "QUẢN LÍ LƯƠNG",
+              label: (<span style={{fontWeight:500}}>QUẢN LÍ LƯƠNG</span>),
               key: "quanliluong",
               children: [
                 {
@@ -127,7 +148,7 @@ function AppMenu() {
               ],
             },
             {
-              label: "HỢP ĐỒNG",
+              label: (<span style={{fontWeight:500}}>HỢP ĐỒNG</span>),
               key: "hopdong",
               children: [
                 {
@@ -143,7 +164,7 @@ function AppMenu() {
               ],
             },
             {
-              label: "TUYỂN DỤNG",
+              label: (<span style={{fontWeight:500}}>TUYỂN DỤNG</span>),
               key: "tuyendung",
               children: [
                 {

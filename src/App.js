@@ -13,10 +13,10 @@ function App() {
       {/* <AppHeader></AppHeader> */}
       <div className="SideMenuAndPageContent">
         <Row>
-          <Col span={4}>
+          <Col span={5}>
             <AppMenu />
           </Col>
-          <Col span={20}>
+          <Col span={19}>
             <AppHeader />
             <AppContent />
           </Col>
